@@ -27,9 +27,11 @@ bars = ax.barh(df["full name"], df["salary"], color=color)
 ax.set_xlim(0, 4500)
 ax.tick_params(axis='x', labelrotation=90)
 
-# Opciones interactivas
+# Opciones para mostrar el sueldo y el nombre
 if mostrar_sueldo:
     ax.bar_label(bars, labels=[f" {salary} €" for salary in df["salary"]], label_type="edge")
+if mostrar_nombre:
+    ax.set_yticklabels([])
 
 # Mostrar gráfico
 st.pyplot(fig)
