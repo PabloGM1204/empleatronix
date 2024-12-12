@@ -30,7 +30,7 @@ ax.tick_params(axis='x', labelrotation=90)
 # Opciones para mostrar el sueldo y el nombre
 if mostrar_sueldo:
     ax.bar_label(bars, labels=[f" {salary} €" for salary in df["salary"]], label_type="edge")
-if mostrar_nombre:
+if mostrar_nombre == False:
     ax.set_yticklabels([])
 
 # Mostrar gráfico
