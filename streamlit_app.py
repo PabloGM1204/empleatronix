@@ -13,8 +13,10 @@ df = pd.DataFrame(data)
 # Mostrar tabla interactiva
 st.dataframe(df)
 
+# Linia divisoria
+st.divider()
+
 # Configuración para gráfico
-st.write("### Configura el gráfico")
 col1, col2, col3 = st.columns(3)
 with col1:
     color = st.color_picker("Elige un color para las barras", "#1f77b4")
