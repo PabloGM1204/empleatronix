@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 st.title("EMPLEATRONIX")
 st.write("Todos los datos sobre los empleados en una aplicación.")
 
-# Datos de ejemplo
+# Lectura del csv
 data = pd.read_csv("csv/employees.csv")
 df = pd.DataFrame(data)
 
@@ -16,7 +16,7 @@ st.dataframe(df)
 # Linia divisoria
 st.divider()
 
-# Configuración para gráfico
+# Columnas para la configuración del gráfico
 col1, col2, col3 = st.columns(3)
 with col1:
     color = st.color_picker("Elige un color para las barras", "#1f77b4")
@@ -25,17 +25,17 @@ with col2:
 with col3:
     mostrar_sueldo = st.toggle("Mostrar sueldo en la barra")
 
-# Crear gráfico de barras
+# Creación gráfico de barras
 fig, ax = plt.subplots()
 bars = ax.barh(df["full name"], df["salary"], color=color)
 
-# Configurar del eje X
+# Configuración del eje X
 ax.set_xlim(0, 4500)
 ax.tick_params(axis='x', labelrotation=90)
 
 # Opciones para mostrar el sueldo y el nombre
 if mostrar_sueldo:
-    ax.bar_label(bars, labels=[f" {salary} €" for salary in df["salary"]], label_type="edge")
+    ax.bar_label(bars, labels=[f" {salary}€" for salary in df["salary"]], label_type="edge")
 if mostrar_nombre == False:
     ax.set_yticklabels([])
 
