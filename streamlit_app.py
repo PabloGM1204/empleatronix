@@ -16,7 +16,7 @@ st.dataframe(df)
 # Configuración para gráfico
 st.write("### Configura el gráfico")
 color = st.color_picker("Elige un color para las barras", "#1f77b4")
-mostrar_nombre = st.checkbox("Mostrar el nombre")
+mostrar_nombre = st.checkbox("Mostrar el nombre", value=True)
 mostrar_sueldo = st.checkbox("Mostrar sueldo en la barra")
 
 # Crear gráfico de barras
